@@ -473,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 54342592172343531, guid: a148e5ee59c33744290e64f471864adb, type: 3}
   elapsedTime: 0
+  BallMaterial: {fileID: 0}
 --- !u!1001 &2969653930661716943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 3247852657791995902, guid: a148e5ee59c33744290e64f471864adb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.73
       objectReference: {fileID: 0}
     - target: {fileID: 3247852657791995902, guid: a148e5ee59c33744290e64f471864adb,
         type: 3}
