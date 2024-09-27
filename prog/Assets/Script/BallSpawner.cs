@@ -15,34 +15,20 @@ public class BallSpawner : MonoBehaviour
     {
         for (int i = 0; i < 100; i++)
         {
-            float r = Random.Range(0f, 1f);
-            float g = Random.Range(0f, 1f);
-            float b = Random.Range(0f, 1f);
-            float x = Random.Range(-8.75f, 8.75f);
-            float y = Random.Range(0f, 5.75f);
-            float z = Random.Range(-4f, 4f);
-            Vector3 RandPos = new Vector3(x, y, z);
-            Color RandColor = new Color(r, g, b, 1f);
-            CreateBall(RandColor, RandPos);
+            CreateBall(RandColor(), RandPos());
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        float r = Random.Range(0f, 1f);
-        float g = Random.Range(0f, 1f);
-        float b = Random.Range(0f, 1f);
-        Color RandColor = new Color(r, g, b, 1f);
-        float x = Random.Range(-8.75f, 8.75f);
-        float y = Random.Range(-5.75f, 5.75f);
-        float z = Random.Range(-4f, 4f);
-        Vector3 RandPos = new Vector3(x, y, z);
+        
+        
         elapsedTime += Time.deltaTime;
         if(elapsedTime >= 1)
         {
             elapsedTime = 0;
-            CreateBall(RandColor,RandPos);
+            CreateBall(RandColor(),RandPos());
         }
     }
     private void CreateBall(Color c , Vector3 Pos)
@@ -58,5 +44,19 @@ public class BallSpawner : MonoBehaviour
         {
             BallMaterial.SetColor("_BaseColor", c);
         }
+    }
+    private Color RandColor()
+    {
+        float r = Random.Range(0f, 1f);
+        float g = Random.Range(0f, 1f);
+        float b = Random.Range(0f, 1f);
+        return new Color(r, g, b, 1f);
+    }
+    private Vector3 RandPos()
+    {
+        float x = Random.Range(-8.75f, 8.75f);
+        float y = Random.Range(-5.75f, 5.75f);
+        float z = Random.Range(-4f, 4f);
+        return new Vector3(x, y, z);
     }
 }
